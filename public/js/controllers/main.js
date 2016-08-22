@@ -46,6 +46,20 @@ angular.module('portfolioApp', ["ngRoute", 'ngCookies'])
   .controller("AboutCtrl", function($scope, $location, $cookies){
     $scope.path = $location.path();
     $scope.name = $cookies.get('visitorName') || false;
+    $scope.collection = [
+      {
+        id: 1,
+        color: 'pink-one',
+        textcolor: 'pink-one-text',
+        title: 'portfolio'
+      },
+      {
+        id: 2,
+        color: 'pink-two',
+        textcolor: 'pink-two-text',
+        title: 'about'
+      },
+    ];
     console.log('welcome about : ', $scope.name);
   })
 
@@ -81,8 +95,6 @@ angular.module('portfolioApp', ["ngRoute", 'ngCookies'])
         scope: true,
         templateUrl: "../directives/header.html",
         controller: ['$scope', '$filter', function ($scope, $filter) {
-            console.log('header directive hit')
-            console.log('header directive scopw', $scope)
         }]
     }
-});
+  })

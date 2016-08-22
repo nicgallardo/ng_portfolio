@@ -1,8 +1,13 @@
-<div>
-  <p ng-if="name">
-    <h1>welcome {{name}}</h1>
-  </p>
-  <p ng-if="!name">
-    Hey buddy, log in! Be cool
-  </p>
+<div ng-if="name">
+  <div class="row white-bg">
+    <div ng-repeat="item in collection track by item.id">
+      <div class="col-xs-2 height-200 {{item.color}}">
+        <div class="vert-center col-md-12 black-bg">
+          <span class="vert-center text-center {{item.textcolor}}">
+            {{item.title}}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

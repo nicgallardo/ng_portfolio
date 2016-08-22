@@ -47,8 +47,32 @@ a {
   background-color: #F06BA8;
 }
 
+.pink-two {
+  background-color: yellow;
+}
+
+.pink-one-text {
+  color: #F06BA8;
+}
+
 .black-bg {
   background-color: black;
+}
+.white-bg {
+  background-color: white;
+}
+
+.height-200 {
+  height: 200px;
+}
+
+.vert-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 30%;
+  width: 50%;
+  margin: -15% 0 0 -25%;
 }
 
 .home-top {
