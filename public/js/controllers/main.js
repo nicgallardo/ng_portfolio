@@ -41,9 +41,9 @@ const titles = [
   },
 ];
 
-const omitTitles = function(titles){
+const omitTitles = function(titles, omit){
   return _.map(titles,(val)=>{
-    if(val.title != 'about'){
+    if(val.title != omit){
       return val
     }else{
       return {
@@ -99,17 +99,36 @@ angular.module('portfolioApp', ["ngRoute", 'ngCookies'])
   .controller("WelcomeCtrl", function($scope, $location, $cookies){
     $scope.path = $location.path();
     $scope.name = $cookies.get('visitorName') || false;
-    console.log('welcome home : ', $scope.name);
+    $scope.collection = omitTitles(titles, undefined);
   })
 
   .controller("AboutCtrl", function($scope, $location, $cookies){
     $scope.path = $location.path();
     $scope.name = $cookies.get('visitorName') || false;
-    $scope.collection = omitTitles(titles);
+    $scope.collection = omitTitles(titles, 'about');
   })
 
-  .controller("PortfolioCtrl", function($scope, $location){
-    $scope.path = $location.path()
+  .controller("PortfolioCtrl", function($scope, $location, $cookies){
+    $scope.path = $location.path();
+    $scope.name = $cookies.get('visitorName') || false;
+    $scope.collection = omitTitles(titles, 'portfolio');
+  })
+
+  .controller("contactCtrl", function($scope, $location, $cookies){
+    $scope.path = $location.path();
+    $scope.name = $cookies.get('visitorName') || false;
+    $scope.collection = omitTitles(titles, 'contact');
+  })
+
+  .controller("socialCtrl", function($scope, $location, $cookies){
+    $scope.path = $location.path();
+    $scope.name = $cookies.get('visitorName') || false;
+    $scope.collection = omitTitles(titles, 'social');
+  })
+  .controller("resumeCtrl", function($scope, $location, $cookies){
+    $scope.path = $location.path();
+    $scope.name = $cookies.get('visitorName') || false;
+    $scope.collection = omitTitles(titles, 'resume');
   })
 
   .config(function($routeProvider, $locationProvider){
@@ -129,6 +148,18 @@ angular.module('portfolioApp', ["ngRoute", 'ngCookies'])
       .when('/portfolio', {
         templateUrl: 'partials/portfolio.html',
         controller: 'PortfolioCtrl'
+      })
+      .when('/contact', {
+        templateUrl: 'partials/contact.html',
+        controller: 'contactCtrl'
+      })
+      .when('/social', {
+        templateUrl: 'partials/social.html',
+        controller: 'socialCtrl'
+      })
+      .when('/resume', {
+        templateUrl: 'partials/resume.html',
+        controller: 'resumeCtrl'
       })
     $locationProvider.html5Mode(true)
   })

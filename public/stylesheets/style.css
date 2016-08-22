@@ -96,6 +96,22 @@ a {
   height: 200px;
 }
 
+a:visited{
+  text-decoration: none !important;
+}
+
+a:hover {
+  color: white !important;
+}
+
+a:active {
+  color: white !important;
+}
+
+#header-link {
+  text-decoration: none !important;
+}
+
 .vert-center {
   position: absolute;
   top: 50%;
