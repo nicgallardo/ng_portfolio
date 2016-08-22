@@ -1,7 +1,6 @@
-angular.module('portfolioApp', ["ngRoute"])
+angular.module('portfolioApp', ["ngRoute", 'ngCookies'])
 
-  .controller("HomeCtrl", function ($scope, $http){
-
+  .controller('HomeCtrl', function($cookies, $scope, $http){
     $scope.master = {};
 
     setTimeout(function(){
@@ -16,11 +15,12 @@ angular.module('portfolioApp', ["ngRoute"])
             $scope.formData = {}; // clear the form so our user is ready to enter another
             $scope.visitorData = data;
             console.log(data);
-        })
+            $cookies.put('visitorName', $scope.master.name);
+        }),
         .error(function(data) {
             console.log('Error: ' + data);
         });
-        
+
       phaseOut(visitor.name);
     };
 
@@ -31,8 +31,44 @@ angular.module('portfolioApp', ["ngRoute"])
         document.getElementById('greeting').style.visibility = "visible";
         $("#greeting-text").addClass('interactive');
       },2000)
-    }
+     }
   })
+
+
+  // .controller("HomeCtrl", function ($scope, $http){
+  //
+  //   $scope.master = {};
+  //
+  //   setTimeout(function(){
+  //     document.getElementById('home-input').style.visibility = "visible";
+  //     $(".custom-input").focus();
+  //   },10000);
+  //
+  //   $scope.update = function(visitor) {
+  //     $scope.master = angular.copy(visitor);
+  //     $http.post('/api/visitors', $scope.master)
+  //       .success(function(data) {
+  //           $scope.formData = {}; // clear the form so our user is ready to enter another
+  //           $scope.visitorData = data;
+  //           console.log(data);
+  //           // $cookies.put('visitorName', $scope.master.name);
+  //       }), ngCookies
+  //       .error(function(data) {
+  //           console.log('Error: ' + data);
+  //       });
+  //
+  //     phaseOut(visitor.name);
+  //   };
+  //
+  //   const phaseOut = function(name){
+  //     $(".home-interactive").fadeOut(1000, function() { $(this).remove(); })
+  //     $( "#greeting-text" ).append(`Well 'ello there ${name}!`);
+  //     setTimeout(function(){
+  //       document.getElementById('greeting').style.visibility = "visible";
+  //       $("#greeting-text").addClass('interactive');
+  //     },2000)
+  //   }
+  // })
 
   .controller("AboutCtrl", function($scope, $location){
     $scope.path = $location.path()
