@@ -26,31 +26,27 @@ angular.module('portfolioApp', ["ngRoute", 'ngCookies'])
     };
 
     const phaseOut = function(name){
+      $cookies.put('visitorName', name);
       $(".home-interactive").fadeOut(1000, function() { $(this).remove(); })
       $( "#greeting-text" ).append(`<a href="/welcome">Welcome ${name}!</a>`);
-      const domChange = new Promise(function(res, rej){
-        setTimeout(function(){
-          document.getElementById('greeting').style.visibility = "visible";
-          $("#greeting-text").addClass('interactive');
-          res(true);
-        },2000)
-      });
 
-      domChange.then(function(value){
-        console.log('this should be true: ', value);
-        $scope.isVisitor = $cookies.get('visitorName');
-      });
-
+      setTimeout(function(){
+        document.getElementById('greeting').style.visibility = "visible";
+        $("#greeting-text").addClass('interactive');
+      },2000);
     };
   })
 
-  .controller("WelcomeCtrl", function($scope, $location){
-    $scope.path = $location.path()
-    console.log('welcome home')
+  .controller("WelcomeCtrl", function($scope, $location, $cookies){
+    $scope.path = $location.path();
+    $scope.name = $cookies.get('visitorName') || false;
+    console.log('welcome home : ', $scope.name);
   })
 
-  .controller("AboutCtrl", function($scope, $location){
-    $scope.path = $location.path()
+  .controller("AboutCtrl", function($scope, $location, $cookies){
+    $scope.path = $location.path();
+    $scope.name = $cookies.get('visitorName') || false;
+    console.log('welcome about : ', $scope.name);
   })
 
   .controller("PortfolioCtrl", function($scope, $location){
@@ -82,9 +78,11 @@ angular.module('portfolioApp', ["ngRoute", 'ngCookies'])
     return {
         restrict: 'A', //This menas that it will be used as an attribute and NOT as an element. I don't like creating custom HTML elements
         replace: true,
+        scope: true,
         templateUrl: "../directives/header.html",
         controller: ['$scope', '$filter', function ($scope, $filter) {
             console.log('header directive hit')
+            console.log('header directive scopw', $scope)
         }]
     }
 });

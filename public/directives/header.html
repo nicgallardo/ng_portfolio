@@ -1,13 +1,8 @@
 <div>
-  <p>
-    <h1>This is the Header.</h1>
+  <p ng-if="name">
+    <h1>welcome {{name}}</h1>
   </p>
-
-
-  <!-- <p ui-if="user">
-    User  is logged in :D
-  </p>
-  <p ui-if="!user">
+  <p ng-if="!name">
     Hey buddy, log in! Be cool
-  </p> -->
+  </p>
 </div>
