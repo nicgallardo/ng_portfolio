@@ -1,0 +1,106 @@
+body {
+  /*padding: 50px;*/
+  background-color: black;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+
+.img-padding {
+  padding: 10px;
+}
+
+.custom-input {
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border-bottom: 2px solid #F06BA8;
+  width: 400px;
+  color: #F06BA8;
+}
+
+.home-submit {
+  background: transparent;
+  border: none;
+  color: #F06BA8;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+#home-input {
+  padding-left: 10px;
+}
+
+#greeting {
+  padding-left: 20px;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.pink-one {
+  background-color: #F06BA8;
+}
+
+.black-bg {
+  background-color: black;
+}
+
+.home-top {
+  height: 30%;
+  background-color: white;
+  padding: 50px 0px 50px 0px;
+}
+.interactive-text {
+  color: #F06BA8;
+  font-family: "Courier";
+  font-size: 20px;
+}
+
+.interactive{
+  margin: 10px 0 0 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 30em;
+  animation: type 5s steps(60, end);
+}
+
+.interactive:nth-child(2){
+  animation: type2 7s steps(60, end);
+}
+
+.interactive:nth-child(3){
+  animation: type2 13s steps(60, end);
+}
+
+.interactive a{
+  color: lime;
+  text-decoration: none;
+}
+
+.blinking{
+  animation: blink 1s infinite;
+}
+
+@keyframes type{
+  from { width: 0; }
+}
+
+@keyframes type2{
+  0%{width: 0;}
+  50%{width: 0;}
+  100%{ width: 100; }
+}
+
+@keyframes blink{
+  to{opacity: .0;}
+}
+
+::selection{
+  background: black;
+}
