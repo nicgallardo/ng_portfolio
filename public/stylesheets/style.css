@@ -82,7 +82,9 @@ a {
 .pink-four-text {
   color: #8C426E;
 }
-
+.black-text {
+  color: black;
+}
 .black-bg {
   background-color: black;
 }

@@ -2,9 +2,9 @@
   <div class="row white-bg">
     <div ng-repeat="item in collection track by item.id">
       <div class="col-xs-2 height-200 {{item.color}}">
-        <div class="vert-center col-md-12 black-bg">
-          <span class="vert-center text-center {{item.textcolor}}">
-            {{item.title}}
+        <div class="vert-center col-md-12 {{item.background}}">
+          <span class="vert-center text-center">
+            <a ng-href="{{item.link}}" class="{{item.textcolor}}">{{item.title}}</a>
           </span>
         </div>
       </div>
@@ -12,7 +12,5 @@
     <div class="col-xs-2 height-200">
       <img src="images/ng_lg.png" class="center-block img-padding" width="80%"/>
     </div>
-
-
   </div>
 </div>

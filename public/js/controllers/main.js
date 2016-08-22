@@ -1,3 +1,62 @@
+const titles = [
+  {
+    id: 0,
+    color: 'pink-zero',
+    textcolor: 'pink-zero-text',
+    title: 'about',
+    link: 'about',
+    background: 'black-bg'
+  },
+  {
+    id: 1,
+    color: 'pink-one',
+    textcolor: 'pink-one-text',
+    title: 'portfolio',
+    link: 'portfolio',
+    background: 'black-bg'
+  },
+  {
+    id: 2,
+    color: 'pink-two',
+    textcolor: 'pink-two-text',
+    title: 'contact',
+    link: 'contact',
+    background: 'black-bg'
+  },
+  {
+    id: 3,
+    color: 'pink-three',
+    textcolor: 'pink-three-text',
+    title: 'resume',
+    link: 'resume',
+    background: 'black-bg'
+  },
+  {
+    id: 4,
+    color: 'pink-four',
+    textcolor: 'pink-four-text',
+    title: 'social',
+    link: 'social',
+    background: 'black-bg'
+  },
+];
+
+const omitTitles = function(titles){
+  return _.map(titles,(val)=>{
+    if(val.title != 'about'){
+      return val
+    }else{
+      return {
+        id: val.id,
+        color: 'black-bg',
+        textcolor: 'black-text',
+        title: val.title,
+        background: val.color
+      }
+    }
+  })
+}
+
 angular.module('portfolioApp', ["ngRoute", 'ngCookies'])
 
   .controller('HomeCtrl', function($cookies, $scope, $http, $location){
@@ -46,39 +105,7 @@ angular.module('portfolioApp', ["ngRoute", 'ngCookies'])
   .controller("AboutCtrl", function($scope, $location, $cookies){
     $scope.path = $location.path();
     $scope.name = $cookies.get('visitorName') || false;
-    $scope.collection = [
-      {
-        id: 0,
-        color: 'pink-zero',
-        textcolor: 'pink-zero-text',
-        title: 'about'
-      },
-      {
-        id: 1,
-        color: 'pink-one',
-        textcolor: 'pink-one-text',
-        title: 'portfolio'
-      },
-      {
-        id: 2,
-        color: 'pink-two',
-        textcolor: 'pink-two-text',
-        title: 'contact'
-      },
-      {
-        id: 3,
-        color: 'pink-three',
-        textcolor: 'pink-three-text',
-        title: 'resume'
-      },
-      {
-        id: 4,
-        color: 'pink-four',
-        textcolor: 'pink-four-text',
-        title: 'social'
-      },
-    ];
-    console.log('welcome about : ', $scope.name);
+    $scope.collection = omitTitles(titles);
   })
 
   .controller("PortfolioCtrl", function($scope, $location){
