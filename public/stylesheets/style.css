@@ -43,16 +43,44 @@ a {
   color: #00B7FF;
 }
 
-.pink-one {
+.pink-zero {
   background-color: #F06BA8;
 }
 
+.pink-one {
+  background-color: #D8619D;
+}
+
 .pink-two {
-  background-color: yellow;
+  background-color: #C5588E;
+}
+
+.pink-three {
+  background-color: #AA4D80;
+}
+
+.pink-four {
+  background-color: #8C426E;
+}
+
+.pink-zero-text {
+  color: #D8619D;
 }
 
 .pink-one-text {
   color: #F06BA8;
+}
+
+.pink-two-text {
+  color: #C5588E;
+}
+
+.pink-three-text {
+  color: #AA4D80;
+}
+
+.pink-four-text {
+  color: #8C426E;
 }
 
 .black-bg {

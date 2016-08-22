@@ -48,6 +48,12 @@ angular.module('portfolioApp', ["ngRoute", 'ngCookies'])
     $scope.name = $cookies.get('visitorName') || false;
     $scope.collection = [
       {
+        id: 0,
+        color: 'pink-zero',
+        textcolor: 'pink-zero-text',
+        title: 'about'
+      },
+      {
         id: 1,
         color: 'pink-one',
         textcolor: 'pink-one-text',
@@ -57,7 +63,19 @@ angular.module('portfolioApp', ["ngRoute", 'ngCookies'])
         id: 2,
         color: 'pink-two',
         textcolor: 'pink-two-text',
-        title: 'about'
+        title: 'contact'
+      },
+      {
+        id: 3,
+        color: 'pink-three',
+        textcolor: 'pink-three-text',
+        title: 'resume'
+      },
+      {
+        id: 4,
+        color: 'pink-four',
+        textcolor: 'pink-four-text',
+        title: 'social'
       },
     ];
     console.log('welcome about : ', $scope.name);
