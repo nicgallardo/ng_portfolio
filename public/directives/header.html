@@ -1,12 +1,13 @@
-<nav ng-if="name" class="navbar navbar-default">
+<nav class="navbar navbar-default">
+  <div ng-if="name">
     <div class="navbar-header">
-     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-       <span class="sr-only">Toggle navigation</span>
-       <span class="icon-bar"></span>
-       <span class="icon-bar"></span>
-       <span class="icon-bar"></span>
-     </button>
-   </div>
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
     <div class="row white-bg collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <div ng-repeat="item in collection track by item.id">
         <div class="col-xs-2 height-200">
@@ -23,4 +24,8 @@
         </a>
       </div>
     </div>
+  </div>
+  <div ng-if="!name">
+    <h3>Looks like we need to get to know each other!</h3>
+  </div>
 </nav>

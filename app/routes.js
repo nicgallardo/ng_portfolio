@@ -34,6 +34,10 @@ module.exports = function (app) {
       getTweets(res);
     });
 
+    // app.get('/api/resume', function (req, res) {
+    //   res.json('../../resume.pdf');
+    // });
+
     app.get('/api/visitors', function (req, res) {
       getVisitors(res);
     });
@@ -46,7 +50,6 @@ module.exports = function (app) {
             if (err)res.send(err);
             getVisitors(res);
         });
-
     });
 
     app.delete('/api/visitors/:visitorId', function (req, res) {

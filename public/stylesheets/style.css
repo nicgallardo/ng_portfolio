@@ -9,6 +9,35 @@ body {
   padding: 10px;
 }
 
+
+.twitter-border {
+  border: 2px solid #c0deed;
+}
+
+.twitter-text {
+  color: #00aced;
+}
+
+.linkedin-text {
+  color: #007bb6;
+}
+
+.linkedin-border {
+  border: 2px solid #007bb6;
+}
+
+.social-pad {
+  padding: 10px;
+}
+.social-marg {
+  margin: 20px;
+}
+.social-box {
+  border-radius: 7px;
+  margin-bottom: 20px;
+}
+
+
 .custom-input {
   border: 0;
   outline: 0;

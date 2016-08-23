@@ -1,2 +1,104 @@
 <div header name="name"></div>
-<h1> Resume Page</h1>
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="row text-right">
+          <a href="tel:303-913-0999">
+            303.913-0999
+          </a>
+        </div>
+        <div class="row text-right">
+          <a href="mailto:nic.gallardo@gmail.com?Subject=Hello%20Nic!" target="_top">
+            nic.gallardo@gmail.com
+          </a>
+        </div>
+        <div class="row text-right">
+          <a href="https://twitter.com/fullstacknic">
+            @fullstacknic
+          </a>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <a ng-href="welcome">
+          <img src="images/ng_logo_sm.png" height="60%"/>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+    <div class="row text-center">
+      <h4>Skills</h4>
+    </div>
+    <div class="col-md-offset-2 col-md-8">
+      <div>
+        <span ng-repeat="skill in skills">
+          {{skill}}{{$last ? '.' : ',' }}
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+    <div class="row text-center">
+      <h4>Projects</h4>
+    </div>
+    <div class="col-md-offset-2 col-md-8">
+      <div ng-repeat="project in projects">
+        <h4>{{project.title}}</h4>
+        <p>{{project.text}}</p>
+        <div ng-if="project.techs">
+          <span ng-repeat="tech in project.techs">
+            {{tech}}{{$last ? '.' : ',' }}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+    <div class="row text-center">
+      <h4>Experiences</h4>
+    </div>
+    <div class="col-md-offset-2 col-md-8">
+      <div ng-repeat="experience in experiences">
+        <div class="twitter-border social-pad social-marg">
+          <h4>{{experience.company}} <span>{{experience.dates}}</span></h4>
+          <h5>{{experience.title}}</h5>
+          <p>{{experience.subtext}}</p>
+          <div ng-if="experience.subexp">
+            <div ng-repeat="sub in experience.subexp">
+              <h5>{{sub.exptitle}}</h5>
+              <div ng-repeat="point in sub.points">
+                <p>{{point.text}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+    <div class="row text-center">
+      <h4>Education</h4>
+    </div>
+    <div class="col-md-offset-2 col-md-8">
+      <div ng-repeat="ed in education">
+        <h4>{{ed.school}} <span>{{ed.dates}}</span></h4>
+        <h5>{{ed.program}}</h5>
+        <p>{{ed.text}}</p>
+      </div>
+    </div>
+  </div>
+</div>
