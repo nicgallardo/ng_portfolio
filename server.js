@@ -25,25 +25,3 @@ require('./app/routes.js')(app);
 // listen (start app with node server.js) ======================================
 app.listen(port);
 console.log("App listening on port " + port);
-<<<<<<< HEAD
-
-//
-// {
-//   "name": "node-todo",
-//   "version": "0.0.1",
-//   "description": "Simple todo application.",
-//   "main": "server.js",
-//   "author": "Scotch",
-//   "dependencies": {
-//     "body-parser": "^1.4.3",
-//     "express": "^4.13.4",
-//     "method-override": "^2.1.3",
-//     "mongoose": "^4.4.12",
-//     "morgan": "^1.1.1"
-//   },
-//   "scripts": {
-//     "start": "node server.js",
-//   }
-// }
-=======
->>>>>>> c21a890ffb16eadcf5f7cec59b9d445c8e54ff4a
