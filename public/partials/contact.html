@@ -1,2 +1,57 @@
 <div header name="name"></div>
-<h1> Contact Page</h1>
+<div class="col-md-offset-2 col-md-8">
+  <p>
+    {{name ? 'Well looky here ' : ''}}{{name ? name : ''}}{{name ? ' you want to know more about me!' : ''}}
+  </p>
+  <p>
+    Just fill out the form below and I will be able to contact you as soon as possible.
+  </p>
+
+
+  <form novalidate class="simple-form">
+    First Name: <input type="text" ng-model="contact.firstName" placeholder="{{name}}"/><br />
+    Last Name: <input type="text" ng-model="contact.lastName"/><br />
+    E-Mail: <input type="email" ng-model="contact.email" /><br />
+    Phone: <input type="text" ng-model="contact.phone" /><br />
+    Message: <input type="text" ng-model="contact.message" /><br />
+    <input type="submit" ng-click="update(contact)" value="Save" />
+  </form>
+
+
+
+
+  <!-- <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="row">
+        If you find that its an urgent matter feel free to text me!
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-6 text-right">
+              Android
+            </div>
+            <div class="col-md-6 text-left">
+              <button type="button" class="btn btn-default" aria-label="Left Align">
+                <span class="glyphicon glyphicon glyphicon-th" aria-hidden="true"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <button type="button" class="btn btn-default" aria-label="Left Align">
+            <span class="glyphicon glyphicon glyphicon-th" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+    if you want it to work on Android you need to use this format:
+
+    <a href="sms:/* phone number here */?body=/* body text here */">Link</a>
+
+    If you want it to work on iOS, you need this:
+
+    <a href="sms:/* phone number here */;body=/* body text here */">Link</a>
+  </div> -->
+</div>

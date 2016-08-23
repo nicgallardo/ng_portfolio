@@ -1,4 +1,5 @@
 var Visitors = require('./models/visitors');
+var Contacts = require('./models/contacts');
 var Twitter = require('twitter');
 
 function getVisitors(res) {
@@ -46,11 +47,26 @@ module.exports = function (app) {
       console.log("posted : ", req);
         Visitors.create({
             name: req.body.name,
-        }, function (err, todo) {
-            if (err)res.send(err);
-            getVisitors(res);
+        }, function (error, response) {
+            if (error)res.send(error);
+            getVisitors(response);
         });
     });
+
+    app.post('/api/contacts', function (req, res) {
+      console.log("posted : ", req);
+        Contacts.create({
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
+            email: req.body.email,
+            phone: req.body.phone,
+            message: req.body.message,
+        }, function (error, response) {
+            if (error)res.send(error);
+            // getVisitors(response);
+        });
+    });
+
 
     app.delete('/api/visitors/:visitorId', function (req, res) {
         Visitors.remove({

@@ -204,10 +204,23 @@ angular.module('portfolioApp', ["ngRoute", 'ngCookies'])
     $scope.collection = omitTitles(titles, 'portfolio');
   })
 
-  .controller("contactCtrl", function($scope, $location, $cookies){
+  .controller("contactCtrl", function($scope, $location, $cookies, $http){
     $scope.path = $location.path();
     $scope.name = $cookies.get('visitorName') || false;
     $scope.collection = omitTitles(titles, 'contact');
+    $scope.master = {};
+    $scope.update = function(contact){
+      $scope.master = angular.copy(contact);
+      console.log($scope.master);
+      $http.post('/api/contacts', $scope.master)
+        .success(function(data) {
+          console.log("success : ", data);
+        })
+        .error(function(data) {
+            console.log('Error: ' + data);
+        });
+    };
+
   })
 
   .controller("socialCtrl", function($scope, $location, $cookies, $http, tweets){
