@@ -1,10 +1,21 @@
 <div header name="name"></div>
 <div>
-  <h1> Social Page</h1>
-  <h4>Tweets</h4>
+  <div class="col-md-4 col-md-offset-4">
+    <h4>Latest Tweets</h4>
+  </div>
   <div ng-repeat="tweet in tweets">
-    <p>
-      Tweet: {{tweet.text}}
-    </p>
+    <div class="row">
+      <div class="well white-bg col-md-4 col-md-offset-4">
+        <div class="row">
+          <div class="col-md-2 white-bg">
+            <img src="images/twitter.png" width="100%" />
+            <!-- <img src="{{tweet.user.profile_image_url_https}}"/> -->
+          </div>
+          <div class="col-md-10">
+            {{tweet.text}}
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
