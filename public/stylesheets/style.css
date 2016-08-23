@@ -1,6 +1,6 @@
 body {
   /*padding: 50px;*/
-  background-color: black;
+  background-color: white;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -17,7 +17,31 @@ body {
   width: 400px;
   color: #F06BA8;
 }
+.welcome-title {
+  background-color: black !important;
+  width: 100px;
+  height: 60px;
+}
+.welcome-div {
+  height: 500px;
+  /*padding-top: 50px;*/
+}
 
+.welcome-box {
+}
+
+.welcome-box-pd {
+  padding: 10px;
+}
+
+table td {
+  border-top: none !important;
+}
+
+
+.header-div {
+  padding-bottom: - 100px;
+}
 .home-submit {
   background: transparent;
   border: none;
@@ -64,11 +88,11 @@ a {
 }
 
 .pink-zero-text {
-  color: #D8619D;
+  color: #F06BA8;
 }
 
 .pink-one-text {
-  color: #F06BA8;
+  color: #D8619D;
 }
 
 .pink-two-text {
@@ -92,7 +116,18 @@ a {
   background-color: white;
 }
 
+.white-text {
+  color: white;
+}
+
+.grey-text {
+  color: #D3D3D3;
+}
+
 .height-200 {
+  height: 200px;
+}
+.height-50 {
   height: 200px;
 }
 

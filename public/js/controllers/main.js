@@ -5,7 +5,8 @@ const titles = [
     textcolor: 'pink-zero-text',
     title: 'about',
     link: 'about',
-    background: 'black-bg'
+    background: 'black-bg',
+    text: `you want to know about me? Well you are in luck 'cause I am an open book.`
   },
   {
     id: 1,
@@ -13,7 +14,8 @@ const titles = [
     textcolor: 'pink-one-text',
     title: 'portfolio',
     link: 'portfolio',
-    background: 'black-bg'
+    background: 'black-bg',
+    text: `see my portfolio? Awesome! Let's take a look!`
   },
   {
     id: 2,
@@ -21,7 +23,8 @@ const titles = [
     textcolor: 'pink-two-text',
     title: 'contact',
     link: 'contact',
-    background: 'black-bg'
+    background: 'black-bg',
+    text: `contact me?`
   },
   {
     id: 3,
@@ -29,7 +32,8 @@ const titles = [
     textcolor: 'pink-three-text',
     title: 'resume',
     link: 'resume',
-    background: 'black-bg'
+    background: 'black-bg',
+    text: `look at my resume?`
   },
   {
     id: 4,
@@ -37,8 +41,9 @@ const titles = [
     textcolor: 'pink-four-text',
     title: 'social',
     link: 'social',
-    background: 'black-bg'
-  },
+    background: 'black-bg',
+    text: `stalk me socially? Im not creeped too creeped out. Go ahead and check out my tweets and such!`
+  }
 ];
 
 const omitTitles = function(titles, omit){
@@ -87,7 +92,7 @@ angular.module('portfolioApp', ["ngRoute", 'ngCookies'])
     const phaseOut = function(name){
       $cookies.put('visitorName', name);
       $(".home-interactive").fadeOut(1000, function() { $(this).remove(); })
-      $( "#greeting-text" ).append(`<a href="/welcome">Welcome ${name}!</a>`);
+      $( "#greeting-text" ).append(`<a href="/welcome" class="grey-text">Welcome ${name}!</a>`);
 
       setTimeout(function(){
         document.getElementById('greeting').style.visibility = "visible";
@@ -100,6 +105,7 @@ angular.module('portfolioApp', ["ngRoute", 'ngCookies'])
     $scope.path = $location.path();
     $scope.name = $cookies.get('visitorName') || false;
     $scope.collection = omitTitles(titles, undefined);
+    $scope.allTitles = titles;
   })
 
   .controller("AboutCtrl", function($scope, $location, $cookies){
