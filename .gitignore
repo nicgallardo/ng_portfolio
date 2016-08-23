@@ -37,8 +37,6 @@ node_modules
 .Trashes
 ehthumbs.db
 Thumbs.db
-package.json
-settings.jsons
 =======
 lib-cov
 *.seed
@@ -58,3 +56,5 @@ results
 
 npm-debug.log
 node_modules
+
+_dev.txt
