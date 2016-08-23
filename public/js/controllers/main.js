@@ -128,7 +128,6 @@ angular.module('portfolioApp', ["ngRoute", 'ngCookies'])
 
   .controller("socialCtrl", function($scope, $location, $cookies, $http, tweets){
     $scope.tweets = tweets;
-    console.log($scope.tweets);
     $scope.path = $location.path();
     $scope.name = $cookies.get('visitorName') || false;
     $scope.collection = omitTitles(titles, 'social');
