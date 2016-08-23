@@ -137,7 +137,6 @@ angular.module('portfolioApp', ["ngRoute", 'ngCookies'])
     $scope.path = $location.path();
     $scope.name = $cookies.get('visitorName') || false;
     $scope.collection = omitTitles(titles, 'resume');
-    console.log('test');
   })
 
   .config(function($routeProvider, $locationProvider){
