@@ -1,2 +1,10 @@
 <div header name="name"></div>
-<h1> Social Page</h1>
+<div>
+  <h1> Social Page</h1>
+  <h4>Tweets</h4>
+  <div ng-repeat="tweet in tweets">
+    <p>
+      Tweet: {{tweet.text}}
+    </p>
+  </div>
+</div>

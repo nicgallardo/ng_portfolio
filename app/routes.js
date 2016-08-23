@@ -1,4 +1,5 @@
 var Visitors = require('./models/visitors');
+var Twitter = require('twitter');
 
 function getVisitors(res) {
     Visitors.find(function (err, visitor) {
@@ -9,7 +10,29 @@ function getVisitors(res) {
     });
 };
 
+var client = new Twitter({
+  consumer_key: process.env.TWITTER_CONSUMER_KEY,
+  consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
+  access_token_key: process.env.TWITTER_ACCESS_TOKEN_KEY,
+  access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
+});
+
+const getTweets = function(res){
+  var params = {screen_name: 'fullstacknic'};
+  client.get('statuses/user_timeline', params, function(error, tweets, response) {
+    if(error) console.log(error)
+    if (!error) {
+      console.log("tweets",tweets);
+      res.json(tweets);
+    }
+  });
+};
+
 module.exports = function (app) {
+
+    app.get('/api/twitter', function (req, res) {
+      getTweets(res);
+    });
 
     app.get('/api/visitors', function (req, res) {
       getVisitors(res);

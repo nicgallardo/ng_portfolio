@@ -126,11 +126,14 @@ angular.module('portfolioApp', ["ngRoute", 'ngCookies'])
     $scope.collection = omitTitles(titles, 'contact');
   })
 
-  .controller("socialCtrl", function($scope, $location, $cookies){
+  .controller("socialCtrl", function($scope, $location, $cookies, $http, tweets){
+    $scope.tweets = tweets;
+    console.log($scope.tweets);
     $scope.path = $location.path();
     $scope.name = $cookies.get('visitorName') || false;
     $scope.collection = omitTitles(titles, 'social');
   })
+
   .controller("resumeCtrl", function($scope, $location, $cookies){
     $scope.path = $location.path();
     $scope.name = $cookies.get('visitorName') || false;
@@ -161,7 +164,14 @@ angular.module('portfolioApp', ["ngRoute", 'ngCookies'])
       })
       .when('/social', {
         templateUrl: 'partials/social.html',
-        controller: 'socialCtrl'
+        controller: 'socialCtrl',
+        resolve: {
+          tweets: function($http){
+            return $http.get('/api/twitter').then(function(res, err){
+              return err ? false : res.data;
+            });
+          }
+        }
       })
       .when('/resume', {
         templateUrl: 'partials/resume.html',

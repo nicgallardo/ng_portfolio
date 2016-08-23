@@ -8,8 +8,8 @@ lib-cov
 *.gz
 .gitignore
 
-keys.json
-
+settings.json
+package.json
 pids
 logs
 results
