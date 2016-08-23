@@ -26,6 +26,8 @@
 *.sql
 *.sqlite
 
+node_modules
+
 # OS generated files #
 ######################
 .DS_Store
@@ -36,4 +38,4 @@
 ehthumbs.db
 Thumbs.db
 package.json
-settings.json
+settings.jsons
