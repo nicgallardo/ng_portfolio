@@ -25,6 +25,7 @@ require('./app/routes.js')(app);
 // listen (start app with node server.js) ======================================
 app.listen(port);
 console.log("App listening on port " + port);
+<<<<<<< HEAD
 
 //
 // {
@@ -44,3 +45,5 @@ console.log("App listening on port " + port);
 //     "start": "node server.js",
 //   }
 // }
+=======
+>>>>>>> c21a890ffb16eadcf5f7cec59b9d445c8e54ff4a
