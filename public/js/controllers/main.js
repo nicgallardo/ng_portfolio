@@ -6,7 +6,7 @@ const titles = [
     title: 'about',
     link: 'about',
     background: 'black-bg',
-    text: `you want to know about me? Well you are in luck 'cause I am an open book.`
+    text: "you want to know about me? Well you are in luck 'cause I am an open book."
   },
   {
     id: 1,
@@ -15,7 +15,7 @@ const titles = [
     title: 'portfolio',
     link: 'portfolio',
     background: 'black-bg',
-    text: `see my portfolio? Awesome! Let's take a look!`
+    text: "see my portfolio? Awesome! Let's take a look!"
   },
   {
     id: 2,
@@ -24,7 +24,7 @@ const titles = [
     title: 'contact',
     link: 'contact',
     background: 'black-bg',
-    text: `contact me?`
+    text: "contact me?"
   },
   {
     id: 3,
@@ -33,7 +33,7 @@ const titles = [
     title: 'resume',
     link: 'resume',
     background: 'black-bg',
-    text: `look at my resume?`
+    text: "look at my resume?"
   },
   {
     id: 4,
@@ -42,12 +42,12 @@ const titles = [
     title: 'social',
     link: 'social',
     background: 'black-bg',
-    text: `stalk me socially? Im not creeped too creeped out. Go ahead and check out my tweets and such!`
+    text: "stalk me socially? No it's not creepy. Go ahead and check out my tweets and such!"
   }
 ];
 
 const omitTitles = function(titles, omit){
-  return _.map(titles,(val)=>{
+  return _.map(titles,function(val){
     if(val.title != omit){
       return val
     }else{
@@ -92,7 +92,7 @@ angular.module('portfolioApp', ["ngRoute", 'ngCookies'])
     const phaseOut = function(name){
       $cookies.put('visitorName', name);
       $(".home-interactive").fadeOut(1000, function() { $(this).remove(); })
-      $( "#greeting-text" ).append(`<a href="/welcome" class="grey-text">Welcome ${name}!</a>`);
+      $( "#greeting-text" ).append('<a href="/welcome" class="grey-text">Welcome ' + name + '!</a>');
 
       setTimeout(function(){
         document.getElementById('greeting').style.visibility = "visible";
@@ -177,6 +177,7 @@ angular.module('portfolioApp', ["ngRoute", 'ngCookies'])
         scope: true,
         templateUrl: "../directives/header.html",
         controller: ['$scope', '$filter', function ($scope, $filter) {
+          // $("#myImage").load(fn);
         }]
     }
   })

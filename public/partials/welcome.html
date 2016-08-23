@@ -1,33 +1,21 @@
-<!-- <div header name="name" class="header-div"></div> -->
-<div class="row home-top">
+<div header name="name"></div>
+<!-- <div class="row home-top">
   <div class="col-md-offset-4 col-md-4 text-center">
     <img src="images/ng_lg.png" class="center-block img-padding" width="40%"/>
   </div>
-</div>
-<!-- <div class="welcome-div">
-  <div ng-repeat="val in allTitles track by val.id">
-    <div class="row">
-      <div class="col-xs-10 col-xs-offset-1 height-200 white-bg">
-        <div class="col-xs-3 welcome-box text-center">
-          <h3 class="grey-text welcome-box-pd">{{val.title}}</h3>
-        </div>
-        <div class="col-xs-7 welcome-box">
-          {{val.text}}
-        </div>
-      </div>
-    </div>
-  </div>
 </div> -->
-<div class="col-md-8 col-md-offset-1">
+<div class="col-md-8 col-md-offset-1 welcome-table">
   <table class="table table-sm">
     <tbody>
       <tr ng-repeat="val in allTitles track by val.id">
         <td>
-          <h3 class="grey-text text-right">{{val.title}}</h3>
+          <a ng-href="{{val.link}}">
+            <h3 class="{{val.textcolor}} no-deco text-right">{{val.title}}</h3>
+          </a>
         </td>
-        <td class="col-xs-7 {{val.color}}">
-          <a ng-href="welcome" class="white-text">
-            So {{name}} you want to {{val.text}}
+        <td class="col-xs-7 {{val.color}} ">
+          <a ng-href="{{val.link}}" class="white-text no-deco text-left">
+            So {{name}}, you want to {{val.text}}
           </a>
         </td>
       </tr>

@@ -135,8 +135,13 @@ a:visited{
   text-decoration: none !important;
 }
 
+.no-deco {
+  text-decoration: none;
+}
+
 a:hover {
   color: white !important;
+  text-decoration: none;
 }
 
 a:active {
@@ -155,6 +160,12 @@ a:active {
   width: 50%;
   margin: -15% 0 0 -25%;
 }
+
+.welcome-table {
+  padding-bottom: 100px;
+}
+
+
 
 .home-top {
   height: 30%;

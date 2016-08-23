@@ -1,18 +1,28 @@
-<div ng-if="name">
-  <div class="row white-bg">
-    <div ng-repeat="item in collection track by item.id">
-      <div class="col-xs-2 height-200 {{item.color}}">
-        <div class="vert-center col-md-12 {{item.background}}">
-          <span class="vert-center text-center">
-            <a ng-href="{{item.link}}" class="{{item.textcolor}}" id="header-link">{{item.title}}</a>
-          </span>
+<nav ng-if="name" class="navbar navbar-default">
+  <div class="continer-fliud">
+    <div class="navbar-header">
+     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+       <span class="sr-only">Toggle navigation</span>
+       <span class="icon-bar"></span>
+       <span class="icon-bar"></span>
+       <span class="icon-bar"></span>
+     </button>
+   </div>
+    <div class="row white-bg collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <div ng-repeat="item in collection track by item.id">
+        <div class="col-xs-2 height-200">
+          <div class="vert-center col-md-12">
+            <span class="vert-center text-center">
+              <a ng-href="{{item.link}}" class="{{item.textcolor}}" id="header-link">{{item.title}}</a>
+            </span>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="col-xs-2 height-200">
-      <a ng-href="welcome">
-        <img src="images/ng_lg.png" class="center-block img-padding" width="80%"/>
-      </a>
+      <div class="col-xs-2 height-200 navbar-brand">
+        <a ng-href="welcome">
+          <img src="images/ng_logo_sm.png" class="center-block img-padding"/>
+        </a>
+      </div>
     </div>
   </div>
-</div>
+</nav>
