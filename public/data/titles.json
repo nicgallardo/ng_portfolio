@@ -1,0 +1,49 @@
+{
+  "data" : [
+    {
+      "id": "0",
+      "color": "pink-zero",
+      "textcolor": "pink-zero-text",
+      "title": "about",
+      "link": "about",
+      "background": "black-bg",
+      "text": "you want to know about me? Well you are in luck 'cause I am an open book."
+    },
+    {
+      "id": "1",
+      "color": "pink-one",
+      "textcolor": "pink-one-text",
+      "title": "portfolio",
+      "link": "portfolio",
+      "background": "black-bg",
+      "text": "see my portfolio? Awesome! Let's take a look!"
+    },
+    {
+      "id": "2",
+      "color": "pink-two",
+      "textcolor": "pink-two-text",
+      "title": "contact",
+      "link": "contact",
+      "background": "black-bg",
+      "text": "contact me?"
+    },
+    {
+      "id": "3",
+      "color": "pink-three",
+      "textcolor": "pink-three-text",
+      "title": "resume",
+      "link": "resume",
+      "background": "black-bg",
+      "text": "look at my resume?"
+    },
+    {
+      "id": "4",
+      "color": "pink-four",
+      "textcolor": "pink-four-text",
+      "title": "social",
+      "link": "social",
+      "background": "black-bg",
+      "text": "stalk me socially? No it's not creepy. Go ahead and check out my tweets and such!"
+    }
+  ]
+}

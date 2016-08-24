@@ -1,50 +1,50 @@
-const titles = [
-  {
-    id: 0,
-    color: 'pink-zero',
-    textcolor: 'pink-zero-text',
-    title: 'about',
-    link: 'about',
-    background: 'black-bg',
-    text: "you want to know about me? Well you are in luck 'cause I am an open book."
-  },
-  {
-    id: 1,
-    color: 'pink-one',
-    textcolor: 'pink-one-text',
-    title: 'portfolio',
-    link: 'portfolio',
-    background: 'black-bg',
-    text: "see my portfolio? Awesome! Let's take a look!"
-  },
-  {
-    id: 2,
-    color: 'pink-two',
-    textcolor: 'pink-two-text',
-    title: 'contact',
-    link: 'contact',
-    background: 'black-bg',
-    text: "contact me?"
-  },
-  {
-    id: 3,
-    color: 'pink-three',
-    textcolor: 'pink-three-text',
-    title: 'resume',
-    link: 'resume',
-    background: 'black-bg',
-    text: "look at my resume?"
-  },
-  {
-    id: 4,
-    color: 'pink-four',
-    textcolor: 'pink-four-text',
-    title: 'social',
-    link: 'social',
-    background: 'black-bg',
-    text: "stalk me socially? No it's not creepy. Go ahead and check out my tweets and such!"
-  }
-];
+// const titles = [];
+//   {
+//     id: 0,
+//     color: 'pink-zero',
+//     textcolor: 'pink-zero-text',
+//     title: 'about',
+//     link: 'about',
+//     background: 'black-bg',
+//     text: "you want to know about me? Well you are in luck 'cause I am an open book."
+//   },
+//   {
+//     id: 1,
+//     color: 'pink-one',
+//     textcolor: 'pink-one-text',
+//     title: 'portfolio',
+//     link: 'portfolio',
+//     background: 'black-bg',
+//     text: "see my portfolio? Awesome! Let's take a look!"
+//   },
+//   {
+//     id: 2,
+//     color: 'pink-two',
+//     textcolor: 'pink-two-text',
+//     title: 'contact',
+//     link: 'contact',
+//     background: 'black-bg',
+//     text: "contact me?"
+//   },
+//   {
+//     id: 3,
+//     color: 'pink-three',
+//     textcolor: 'pink-three-text',
+//     title: 'resume',
+//     link: 'resume',
+//     background: 'black-bg',
+//     text: "look at my resume?"
+//   },
+//   {
+//     id: 4,
+//     color: 'pink-four',
+//     textcolor: 'pink-four-text',
+//     title: 'social',
+//     link: 'social',
+//     background: 'black-bg',
+//     text: "stalk me socially? No it's not creepy. Go ahead and check out my tweets and such!"
+//   }
+// ];
 
 const experiences = [
   {
@@ -185,26 +185,25 @@ angular.module('portfolioApp', ["ngRoute", 'ngCookies'])
     };
   })
 
-  .controller("WelcomeCtrl", function($scope, $location, $cookies){
+  .controller("WelcomeCtrl", function($scope, $location, $cookies, titles){
     $scope.path = $location.path();
     $scope.name = $cookies.get('visitorName') || false;
     $scope.collection = omitTitles(titles, undefined);
-    $scope.allTitles = titles;
   })
 
-  .controller("AboutCtrl", function($scope, $location, $cookies){
+  .controller("AboutCtrl", function($scope, $location, $cookies, titles){
     $scope.path = $location.path();
     $scope.name = $cookies.get('visitorName') || false;
     $scope.collection = omitTitles(titles, 'about');
   })
 
-  .controller("PortfolioCtrl", function($scope, $location, $cookies){
+  .controller("PortfolioCtrl", function($scope, $location, $cookies, titles){
     $scope.path = $location.path();
     $scope.name = $cookies.get('visitorName') || false;
     $scope.collection = omitTitles(titles, 'portfolio');
   })
 
-  .controller("contactCtrl", function($scope, $location, $cookies, $http){
+  .controller("contactCtrl", function($scope, $location, $cookies, $http, titles){
     $scope.path = $location.path();
     $scope.name = $cookies.get('visitorName') || false;
     $scope.collection = omitTitles(titles, 'contact');
@@ -223,15 +222,14 @@ angular.module('portfolioApp', ["ngRoute", 'ngCookies'])
 
   })
 
-  .controller("socialCtrl", function($scope, $location, $cookies, $http, tweets){
-    console.log('tweets : ', tweets);
+  .controller("socialCtrl", function($scope, $location, $cookies, $http, tweets, titles){
     $scope.tweets = tweets.slice(0, 4)
     $scope.path = $location.path();
     $scope.name = $cookies.get('visitorName') || false;
     $scope.collection = omitTitles(titles, 'social');
   })
 
-  .controller("resumeCtrl", function($scope, $location, $cookies, $http){
+  .controller("resumeCtrl", function($scope, $location, $cookies, $http, titles){
     $scope.path = $location.path();
     $scope.skills = skills;
     $scope.education = education;
@@ -257,19 +255,47 @@ angular.module('portfolioApp', ["ngRoute", 'ngCookies'])
       })
       .when('/welcome', {
         templateUrl: '/partials/welcome.html',
-        controller: 'WelcomeCtrl'
+        controller: 'WelcomeCtrl',
+        resolve: {
+          titles: function($http){
+            return $http.get('../../data/titles.json').then(function(res, err){
+              return err ? false : res.data.data;
+            });
+          }
+        }
       })
       .when('/about', {
         templateUrl: '/partials/about.html',
-        controller: 'AboutCtrl'
+        controller: 'AboutCtrl',
+        resolve: {
+          titles: function($http){
+            return $http.get('../../data/titles.json').then(function(res, err){
+              return err ? false : res.data.data;
+            });
+          }
+        }
       })
       .when('/portfolio', {
         templateUrl: 'partials/portfolio.html',
-        controller: 'PortfolioCtrl'
+        controller: 'PortfolioCtrl',
+        resolve: {
+          titles: function($http){
+            return $http.get('../../data/titles.json').then(function(res, err){
+              return err ? false : res.data.data;
+            });
+          }
+        }
       })
       .when('/contact', {
         templateUrl: 'partials/contact.html',
-        controller: 'contactCtrl'
+        controller: 'contactCtrl',
+        resolve: {
+          titles: function($http){
+            return $http.get('../../data/titles.json').then(function(res, err){
+              return err ? false : res.data.data;
+            });
+          }
+        }
       })
       .when('/social', {
         templateUrl: 'partials/social.html',
@@ -279,12 +305,24 @@ angular.module('portfolioApp', ["ngRoute", 'ngCookies'])
             return $http.get('/api/twitter').then(function(res, err){
               return err ? false : res.data;
             });
+          },
+          titles: function($http){
+            return $http.get('../../data/titles.json').then(function(res, err){
+              return err ? false : res.data.data;
+            });
           }
         }
       })
       .when('/resume', {
         templateUrl: 'partials/resume.html',
         controller: 'resumeCtrl',
+        resolve: {
+          titles: function($http){
+            return $http.get('../../data/titles.json').then(function(res, err){
+              return err ? false : res.data.data;
+            });
+          }
+        }
       })
     $locationProvider.html5Mode(true)
   })
