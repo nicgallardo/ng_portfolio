@@ -63,7 +63,6 @@ module.exports = function (app) {
             message: req.body.message,
         }, function (error, response) {
             if (error)res.send(error);
-            // getVisitors(response);
         });
     });
 

@@ -1,57 +1,30 @@
 <div header name="name"></div>
 <div class="col-md-offset-2 col-md-8">
-  <p>
-    {{name ? 'Well looky here ' : ''}}{{name ? name : ''}}{{name ? ' you want to know more about me!' : ''}}
-  </p>
-  <p>
+  <h3>
+    {{name ? 'Well looky there ' : ''}}{{name ? name : ''}}{{name ? ' you want to know more about me?' : ''}}
+  </h3>
+  <h3>
     Just fill out the form below and I will be able to contact you as soon as possible.
-  </p>
-
+  </h3>
 
   <form novalidate class="simple-form">
-    First Name: <input type="text" ng-model="contact.firstName" placeholder="{{name}}"/><br />
-    Last Name: <input type="text" ng-model="contact.lastName"/><br />
-    E-Mail: <input type="email" ng-model="contact.email" /><br />
-    Phone: <input type="text" ng-model="contact.phone" /><br />
-    Message: <input type="text" ng-model="contact.message" /><br />
-    <input type="submit" ng-click="update(contact)" value="Save" />
+      <div class="input-group form-margin">
+        <span class="input-group-addon" id="first-name">first name</span>
+        <input type="text" ng-model="contact.firstName" class="form-control" aria-describedby="first-name" placeholder="{{name}}"/>
+        <span class="input-group-addon" id="last-name">first name</span>
+        <input type="text" ng-model="contact.lastNAme" class="form-control" aria-describedby="last-name"/>
+      </div>
+      <div class="input-group form-margin">
+        <span class="input-group-addon" id="email">email</span>
+        <input type="text" ng-model="contact.email" class="form-control" aria-describedby="email"/>
+        <span class="input-group-addon" id="phone">phone</span>
+        <input type="text" ng-model="contact.phone" class="form-control" aria-describedby="phone"/>
+      </div>
+      <div class="input-group form-margin">
+        <span class="input-group-addon" id="message">message</span>
+        <input type="text" ng-model="contact.message" class="form-control" aria-describedby="message"/>
+      </div>
+    <input type="submit" ng-click="update(contact)" value="Save" class="btn btn-default"/>
   </form>
 
-
-
-
-  <!-- <div class="row">
-    <div class="col-md-8 col-md-offset-2">
-      <div class="row">
-        If you find that its an urgent matter feel free to text me!
-      </div>
-      <div class="row">
-        <div class="col-md-6">
-          <div class="row">
-            <div class="col-md-6 text-right">
-              Android
-            </div>
-            <div class="col-md-6 text-left">
-              <button type="button" class="btn btn-default" aria-label="Left Align">
-                <span class="glyphicon glyphicon glyphicon-th" aria-hidden="true"></span>
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <button type="button" class="btn btn-default" aria-label="Left Align">
-            <span class="glyphicon glyphicon glyphicon-th" aria-hidden="true"></span>
-          </button>
-        </div>
-      </div>
-
-    </div>
-    if you want it to work on Android you need to use this format:
-
-    <a href="sms:/* phone number here */?body=/* body text here */">Link</a>
-
-    If you want it to work on iOS, you need this:
-
-    <a href="sms:/* phone number here */;body=/* body text here */">Link</a>
-  </div> -->
 </div>
