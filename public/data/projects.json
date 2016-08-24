@@ -1,0 +1,11 @@
+{
+	"data": [{
+		"title": "Galaxy Bomber",
+		"text": "Multiplayer interactive game that allows users to challange their friends via facebook. Implementing sockets allow players from all over the world to connect in real time to interact with their opposition.",
+		"techs": ["MongoDB", "Express.js", "Node.js", "Angular", "Socket.io", "Facebook OAuth"]
+	}, {
+		"title": "IntellegoInfo",
+		"text": "Bringing numbers to life, this app uses the Huffington Post API Polls and illutrates the numbers in related d3.js charts. While rendering the charts headlines from the polls are used to search the NY Times API for relevant headlines showing the user applicable stories relating to the poll.",
+		"techs": ["Express.js", "Node.js", "Angular", "RESTful API", "D3.js"]
+	}]
+}

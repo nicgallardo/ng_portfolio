@@ -1,0 +1,59 @@
+{
+  "data": [
+    {
+      "company": "TechPulse /Reactual.io",
+      "dates": "1/16 - 8/16",
+      "title": "Full Stack Developer",
+      "subtext": "Founding member and developer of Reactual.io an enterprise level CRM software using Meteor.js.",
+      "subexp": [
+        {
+          "exptitle": "Customized Email Integration",
+          "points": [
+            {
+              "text": "Incoming email webhook parsing"
+            },
+            {
+              "text": "Outgoing automatic email notices & responses"
+            },
+            {
+              "text": "User created content & customizable email templates"
+            },
+            {
+              "text": "Dynamic user driven and createdemail spam blocking"
+            }
+          ]
+        },
+        {
+          "exptitle": "TWILIO VOIP INTEGRATION",
+          "bulletPoints": [
+            {
+              "text": "Integrated custom incoming and outgoing phone services"
+            },
+            {
+              "text": "Services includ call forwarding, transfers, holds, voicemail and multiparty calling"
+            }
+          ]
+        },
+        {
+          "exptitle": "Plaid Banking Services",
+          "bulletPoints": [
+            {
+              "text": "Created user banking integration to import banking information for accounting."
+
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "company": "Freelance Graphic Design",
+      "subtext": "Freelance designer with clients from small to medium sized businesses to clothing companies."
+    },
+    {
+      "company": "Red Ventures",
+      "dates": "6/13 - 6/15",
+      "title": "Performace Manager in Training",
+      "subtext": "SEO centered sales firm that managed business to consumer sales via the internet. Managed teams of 20 -40 represenatives."
+    }
+  ]
+}
