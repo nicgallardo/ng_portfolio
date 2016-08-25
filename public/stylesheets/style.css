@@ -1,7 +1,14 @@
+/*font-family: 'Vidaloka', serif >>>text;
+font-family: 'Tauri', cursive;*  >> Titles/*/
+
 body {
   /*padding: 50px;*/
-  background-color: white;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #F2F2F2;
+  font: 14px 'Vidaloka', Helvetica, Arial, sans-serif;
+}
+
+.title-font {
+  font-family: 'Tauri', serif;
 }
 
 
@@ -15,7 +22,7 @@ body {
 
 
 .twitter-border {
-  border: 2px solid #c0deed;
+  border: 2px solid #DCDCDC;
 }
 
 .project-container {
@@ -47,10 +54,12 @@ body {
   margin: 20px;
 }
 .social-box {
-  border-radius: 7px;
+  border-radius: 4px;
   margin-bottom: 20px;
 }
-
+.contact-box {
+  padding: 50px 0px 20px 0px;
+}
 
 .custom-input {
   border: 0;
@@ -156,7 +165,7 @@ a {
   background-color: black;
 }
 .white-bg {
-  background-color: white;
+  background-color: #FFFFFF;
 }
 
 .white-text {
@@ -168,7 +177,7 @@ a {
 }
 
 .grey-bg {
-  background-color: : #D3D3D3;
+  background-color: #D3D3D3;
 }
 
 .height-200 {

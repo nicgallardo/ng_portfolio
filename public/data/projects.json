@@ -1,6 +1,6 @@
 {
 	"data": [{
-		"title": "Galaxy Bomber",
+		"title": "galaxybomber.xyz",
 		"text": "Multiplayer interactive game that allows users to challange their friends via facebook. Implementing sockets allow players from all over the world to connect in real time to interact with their opposition.",
 		"techs": ["MongoDB", "Express.js", "Node.js", "Angular", "Socket.io", "Facebook OAuth"],
 		"url": "http://galaxybomber.xyz",

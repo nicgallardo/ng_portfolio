@@ -1,38 +1,41 @@
 <div header name="name"></div>
-<div ng-repeat="project in projects">
-  <div class="project-container">
-    <div class="row">
-      <div class="col-md-4 col-md-offset-4 text-center grey-bg">
-        <a ng-href="{{project.url}}">
-          <h4 class="pink-one-text bold-font">{{project.title}}</h4>
-        </a>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-10 col-md-offset-1">
+<div class="">
 
-        <div class="row">
-          <div class="col-md-12">
-            <p>{{project.text}}</p>
-          </div>
+  <div ng-repeat="project in projects">
+    <div class="project-container white-bg">
+      <div class="row">
+        <div class="col-md-4 col-md-offset-4 text-center">
+          <a ng-href="{{project.url}}">
+            <h4 class="pink-one-text title-font">{{project.title}}</h4>
+          </a>
         </div>
-        <div class="row">
-          <div class="col-md-12 pink-one-text">
-            <p><i> Project made using
-              <span ng-repeat="tech in project.techs">
-                {{tech}}{{$last ? '.' : ',' }}
-              </span>
-            </i></p>
+      </div>
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+
+          <div class="row">
+            <div class="col-md-12">
+              <p>{{project.text}}</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 pink-one-text">
+              <p><i> Project made using
+                <span ng-repeat="tech in project.techs">
+                  {{tech}}{{$last ? '.' : ',' }}
+                </span>
+              </i></p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-md-10 col-md-offset-1">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="col-md-4 text-center project-img" ng-repeat="image in project.images">
-              <img src="{{image}}"/>
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="col-md-4 text-center project-img" ng-repeat="image in project.images">
+                <img src="{{image}}"/>
+              </div>
             </div>
           </div>
         </div>
