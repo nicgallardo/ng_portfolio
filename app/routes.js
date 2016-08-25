@@ -3,11 +3,11 @@ var Contacts = require('./models/contacts');
 var Twitter = require('twitter');
 
 function getVisitors(res) {
-    Visitors.find(function (err, visitor) {
+    Visitors.find(function (err, res) {
         if (err) {
           res.send(err);
         }
-        res.json(visitor);
+        // visitor.json(visitor);
     });
 };
 
@@ -23,7 +23,6 @@ const getTweets = function(res){
   client.get('statuses/user_timeline', params, function(error, tweets, response) {
     if(error) console.log(error)
     if (!error) {
-      console.log("tweets",tweets);
       res.json(tweets);
     }
   });

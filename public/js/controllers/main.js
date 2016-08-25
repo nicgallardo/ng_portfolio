@@ -65,10 +65,11 @@ angular.module('portfolioApp', ["ngRoute", 'ngCookies'])
     $scope.collection = omitTitles(titles, 'about');
   })
 
-  .controller("PortfolioCtrl", function($scope, $location, $cookies, titles){
+  .controller("PortfolioCtrl", function($scope, $location, $cookies, titles, projects){
     $scope.path = $location.path();
     $scope.name = $cookies.get('visitorName') || false;
     $scope.collection = omitTitles(titles, 'portfolio');
+    $scope.projects = projects;
   })
 
   .controller("contactCtrl", function($scope, $location, $cookies, $http, titles){
@@ -141,6 +142,11 @@ angular.module('portfolioApp', ["ngRoute", 'ngCookies'])
         resolve: {
           titles: function($http){
             return $http.get('../../data/titles.json').then(function(res, err){
+              return err ? false : res.data.data;
+            });
+          },
+          projects: function($http){
+            return $http.get('../../data/projects.json').then(function(res, err){
               return err ? false : res.data.data;
             });
           }
