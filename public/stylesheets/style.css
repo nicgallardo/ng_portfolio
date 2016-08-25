@@ -18,6 +18,13 @@ body {
   border: 2px solid #c0deed;
 }
 
+.project-container {
+  border: 2px solid #D8619D;
+  border-radius: 5px;
+  margin: 20px;
+  padding: 10px;
+}
+
 .twitter-text {
   color: #00aced;
 }
@@ -155,6 +162,10 @@ a {
 
 .grey-text {
   color: #D3D3D3;
+}
+
+.grey-bg {
+  background-color: : #D3D3D3;
 }
 
 .height-200 {

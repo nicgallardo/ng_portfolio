@@ -57,6 +57,7 @@ angular.module('portfolioApp', ["ngRoute", 'ngCookies'])
     $scope.path = $location.path();
     $scope.name = $cookies.get('visitorName') || false;
     $scope.collection = omitTitles(titles, undefined);
+    $scope.allTitles = titles;
   })
 
   .controller("AboutCtrl", function($scope, $location, $cookies, titles){
