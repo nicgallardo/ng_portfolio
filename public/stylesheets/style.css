@@ -21,10 +21,13 @@ body {
 .project-container {
   border: 2px solid #D8619D;
   border-radius: 5px;
-  margin: 20px;
-  padding: 10px;
+  padding: 30px;
+  margin: 10px 20px 50px 20px;
 }
 
+.project-img {
+  margin: 20px 0px 30px 0px;
+}
 .twitter-text {
   color: #00aced;
 }
@@ -173,6 +176,10 @@ a {
 }
 .height-50 {
   height: 200px;
+}
+
+.bold-font {
+  font-weight: bold;
 }
 
 a:visited{
