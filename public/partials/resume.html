@@ -72,6 +72,7 @@
             <h5 class="pink-three-text">{{experience.title}}</h5>
             <p>{{experience.subtext}}</p>
             <div ng-if="experience.subexp">
+              <hr class="pink-hr">
               <div ng-repeat="sub in experience.subexp">
                 <h5>{{sub.exptitle}}</h5>
                 <div ng-repeat="point in sub.points">
@@ -87,7 +88,6 @@
     </div>
   </div>
 </div>
-
 
 
 

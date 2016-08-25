@@ -47,6 +47,10 @@ body {
   border: 2px solid #007bb6;
 }
 
+.pink-hr {
+  color: #F06BA8;
+}
+
 .social-pad {
   padding: 10px;
 }
