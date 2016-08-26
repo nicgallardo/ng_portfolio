@@ -7,12 +7,12 @@ var database = require('./config/database'); 			// load the database config
 var morgan = require('morgan');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
-var favicon = require('serve-favicon');
+// var favicon = require('serve-favicon');
 require('dotenv').config();
 // configuration ===============================================================
 mongoose.connect(database.localUrl); 	// Connect to local MongoDB instance. A remoteUrl is also available (modulus.io)
 
-app.use(favicon(__dirname + '/public/favicon.ico')); //
+// app.use(favicon(__dirname + '/public/favicon.ico')); //
 app.use(express.static('./public')); 		// set the static files location /public/img will be /img for users
 app.use(morgan('dev')); // log every request to the console
 app.use(bodyParser.urlencoded({'extended': 'true'})); // parse application/x-www-form-urlencoded
