@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 // var favicon = require('serve-favicon');
 require('dotenv').config();
-mongoose.connect(database.localUrl); 	// Connect to local MongoDB instance. A remoteUrl is also available (modulus.io)
+mongoose.connect(process.env.MONGODB_URI); 	// Connect to local MongoDB instance. A remoteUrl is also available (modulus.io)
 
 // app.use(favicon(__dirname + '/public/favicon.ico')); //
 app.use(express.static('./public')); 		// set the static files location /public/img will be /img for users
