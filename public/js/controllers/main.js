@@ -18,6 +18,21 @@ angular.module('portfolioApp', ["ngRoute", 'ngCookies'])
 
   .controller('HomeCtrl', function($cookies, $scope, $http, $location){
 
+    const welcomeBack = function(name){
+      console.log(name);
+      $('.home-interactive').empty();
+      document.getElementById('welcome-back').style.visibility = "visible";
+      $('#welcome-back').append('Howdy ' + name + '! Welcome Back!');
+      setTimeout(function(){
+        location.replace('/welcome');
+      }, 2500)
+    };
+
+    $scope.name = $cookies.get('visitorName');
+    console.log($scope.name);
+    !$scope.name ? console.log('no name person') : welcomeBack($scope.name);
+
+
     $scope.master = {};
 
     setTimeout(function(){
