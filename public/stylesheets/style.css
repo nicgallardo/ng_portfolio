@@ -273,12 +273,11 @@ a:active {
 
 .home-top {
   height: 30%;
-  background-color: white;
   padding: 50px 0px 50px 0px;
 }
 .interactive-text {
   color: #F06BA8;
-  font-family: "Courier";
+  /*font-family: "Courier";*/
   font-size: 20px;
 }
 
@@ -287,15 +286,15 @@ a:active {
   white-space: nowrap;
   overflow: hidden;
   width: 30em;
-  animation: type 5s steps(60, end);
+  animation: type 3s steps(60, end);
 }
 
 .interactive:nth-child(2){
-  animation: type2 7s steps(60, end);
+  animation: type2 5s steps(60, end);
 }
 
 .interactive:nth-child(3){
-  animation: type2 13s steps(60, end);
+  animation: type2 9s steps(60, end);
 }
 
 .interactive a{

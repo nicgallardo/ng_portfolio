@@ -23,7 +23,7 @@ angular.module('portfolioApp', ["ngRoute", 'ngCookies'])
     setTimeout(function(){
       document.getElementById('home-input').style.visibility = "visible";
       $(".custom-input").focus();
-    },10000);
+    },6100);
 
     $scope.update = function(visitor) {
       visitor.name = _.upperFirst(visitor.name.toLowerCase());
