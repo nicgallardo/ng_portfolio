@@ -1,5 +1,5 @@
 {
-  "name": "node-todo",
+  "name": "portfolio",
   "version": "0.0.1",
   "description": "Simple todo application.",
   "main": "server.js",
