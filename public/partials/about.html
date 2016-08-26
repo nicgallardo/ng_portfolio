@@ -1,4 +1,16 @@
-<div header name="name"></div>
-<h1>
-  about
-</h1>
+<div ng-if="!name">
+  <div who test="testers"></div>
+</div>
+<div ng-if="name">
+  <div header name="name"></div>
+  <div class="col-md-offset-2 padding-30 text-center col-md-8 white-bg twitter-border">
+    <h3 class="pink-one-text">
+      {{name ? 'So ' : ''}}{{name ? name : ''}}{{name ? ' you want to know more about me?' : ''}}
+    </h3>
+    <div class="row">
+      <p>
+        I am a Full Stack developer with a Graphic Design background. I love solving complicated problems with eloquent and swift code. When I don't have my eyes on a screen coding you can find me on my bicycle rolling through town or doodling in a notebook.
+      </p>
+    </div>
+  </div>
+</div>

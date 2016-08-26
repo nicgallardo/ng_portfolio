@@ -1,94 +1,99 @@
-<div header name="name"></div>
-<div class="row">
+<div ng-if="!name">
+  <div who test="testers"></div>
+</div>
+<div ng-if="name">
+  <div header name="name"></div>
+  <div class="row">
 
-  <!-- Left -->
+    <!-- Left -->
 
-  <div class="col-md-offset-1 col-md-2 white-bg text-center">
-    <div class="row">
-      <h3 class="pink-one-text title-font">Contact</h3>
-      <a class="pink-four-text" href="tel:303-913-0999">
-        303.913-0999
-      </a>
-    </div>
-    <div class="row">
-      <a class="pink-four-text" href="mailto:nic.gallardo@gmail.com?Subject=Hello%20Nic!" target="_top">
-        nic.gallardo@gmail.com
-      </a>
-    </div>
-    <div class="row">
-      <a class="pink-four-text" href="https://twitter.com/fullstacknic">
-        <span>
-          <img src="images/twitter_sm.png" height="30px;"/>
-        </span>
-        @fullstacknic
-      </a>
-    </div>
-  </div>
-
-  <!-- center -->
-
-  <div class="col-md-offset-1 col-md-3">
-    <div class="row white-bg form-margin">
-      <h3 class="pink-one-text title-font text-center">Projects</h3>
-      <div ng-repeat="project in projects">
-        <div class="social-marg">
-          <a href="{{project.url}}">
-            <h4 class="pink-four-text">{{project.title}}</h4>
-          </a>
-          <p>{{project.text}}</p>
-          <div ng-if="project.techs">
-            <h5 class="pink-four-text text-center">Tech Used</h5>
-            <span class="pink-one-text" ng-repeat="tech in project.techs">
-              {{tech}}{{$last ? '.' : ',' }}
-            </span>
-          </div>
-        </div>
-        <div ng-if=!$last>
-          <hr>
-        </div>
+    <div class="col-md-offset-1 col-md-2 twitter-border social-box white-bg linkedin-box padding-30 text-center">
+      <div class="row">
+        <h3 class="pink-one-text title-font">Contact</h3>
+        <a class="pink-four-text" href="tel:303-913-0999">
+          303.913-0999
+        </a>
       </div>
-    </div>
-  </div>
-
-  <!-- right -->
-  <div class="col-md-offset-1 col-md-3">
-    <div class="row">
-      <div class="col-md-12 white-bg">
-        <div class="row">
-          <h3 class="pink-one-text title-font text-center">Skills</h3>
-        </div>
-        <div class="row form-margin">
-          <span ng-repeat="skill in skills">
-            {{skill}}{{$last ? '.' : ',' }}
+      <div class="row">
+        <a class="pink-four-text" href="mailto:nic.gallardo@gmail.com?Subject=Hello%20Nic!" target="_top">
+          nic.gallardo@gmail.com
+        </a>
+      </div>
+      <div class="row">
+        <a class="pink-four-text" href="https://twitter.com/fullstacknic">
+          <span>
+            <img src="images/twitter_sm.png" height="30px;"/>
           </span>
-        </div>
+          @fullstacknic
+        </a>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-12 white-bg form-margin">
-        <h3 class="pink-one-text title-font text-center">Experiences</h3>
-        <div ng-repeat="experience in experiences">
-            <h4 class="pink-four-text">{{experience.company}} <span>{{experience.dates}}</span></h4>
-            <h5 class="pink-three-text">{{experience.title}}</h5>
-            <p>{{experience.subtext}}</p>
-            <div ng-if="experience.subexp">
-              <hr class="pink-hr">
-              <div ng-repeat="sub in experience.subexp">
-                <h5>{{sub.exptitle}}</h5>
-                <div ng-repeat="point in sub.points">
-                  <p>{{point.text}}</p>
-                </div>
-              </div>
+
+    <!-- center -->
+
+    <div class="col-md-offset-1 col-md-3 padding-30 twitter-border white-bg linkedin-box">
+      <div class="row">
+        <h3 class="pink-one-text title-font text-center">Projects</h3>
+        <div ng-repeat="project in projects">
+          <div class="social-marg">
+            <a href="{{project.url}}">
+              <h4 class="pink-four-text">{{project.title}}</h4>
+            </a>
+            <p>{{project.text}}</p>
+            <div ng-if="project.techs">
+              <span class="pink-one-text" ng-repeat="tech in project.techs">
+                {{tech}}{{$last ? '.' : ',' }}
+              </span>
             </div>
+          </div>
           <div ng-if=!$last>
             <hr>
           </div>
         </div>
       </div>
     </div>
+
+    <!-- right -->
+    <div class="col-md-offset-1 col-md-3">
+      <div class="row">
+        <div class="twitter-border social-box white-bg">
+          <div class="row">
+            <h3 class="pink-one-text title-font text-center">Skills</h3>
+          </div>
+          <div class="row">
+            <p class="padding-30">
+              <span ng-repeat="skill in skills">
+                {{skill}}{{$last ? '.' : ',' }}
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 twitter-border social-box white-bg linkedin-box padding-30">
+          <h3 class="pink-one-text title-font text-center">Experience</h3>
+          <div ng-repeat="experience in experiences">
+              <h4 class="pink-four-text">{{experience.company}} <span>{{experience.dates}}</span></h4>
+              <h5 class="pink-three-text">{{experience.title}}</h5>
+              <p>{{experience.subtext}}</p>
+              <div ng-if="experience.subexp">
+                <!-- <hr class="pink-hr"> -->
+                <!-- <div ng-repeat="sub in experience.subexp">
+                  <h5>{{sub.exptitle}}</h5> -->
+                  <!-- <div ng-repeat="point in sub.points">
+                    <p>{{point.text}}</p>
+                  </div> -->
+                <!-- </div> -->
+              </div>
+            <div ng-if=!$last>
+              <hr>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
-
 
 
 

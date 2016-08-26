@@ -1,6 +1,8 @@
-<div header name="name"></div>
-<div class="">
-
+<div ng-if="!name">
+  <div who test="testers"></div>
+</div>
+<div ng-if="name">
+  <div header name="name"></div>
   <div ng-repeat="project in projects">
     <div class="project-container white-bg">
       <div class="row">

@@ -26,30 +26,32 @@ angular.module('portfolioApp', ["ngRoute", 'ngCookies'])
     },10000);
 
     $scope.update = function(visitor) {
+      visitor.name = _.upperFirst(visitor.name.toLowerCase());
       $scope.master = angular.copy(visitor);
       $http.post('/api/visitors', $scope.master)
         .success(function(data) {
             $scope.formData = {}; // clear the form so our user is ready to enter another
             $scope.visitorData = data;
-            console.log(data);
-            $cookies.put('visitorName', $scope.master.name);
+
         })
         .error(function(data) {
             console.log('Error: ' + data);
         });
 
-      phaseOut(visitor.name);
+      phaseOut(visitor.name, function(err, res){
+        if(res){
+          console.log('got res');
+          $cookies.put('visitorName', $scope.master.name);
+          location.replace("/welcome");
+        }
+      });
     };
 
-    const phaseOut = function(name){
-      $cookies.put('visitorName', name);
-      $(".home-interactive").fadeOut(1000, function() { $(this).remove(); })
-      $( "#greeting-text" ).append('<a href="/welcome" class="grey-text">Welcome ' + name + '!</a>');
-
+    const phaseOut = function(name, cb){
+      $("body").fadeOut(1500, function() { $(this).remove(); })
       setTimeout(function(){
-        document.getElementById('greeting').style.visibility = "visible";
-        $("#greeting-text").addClass('interactive');
-      },2000);
+        cb(null, true);
+      },3000);
     };
   })
 
@@ -80,10 +82,10 @@ angular.module('portfolioApp', ["ngRoute", 'ngCookies'])
     $scope.master = {};
     $scope.update = function(contact){
       $scope.master = angular.copy(contact);
-      console.log($scope.master);
       $http.post('/api/contacts', $scope.master)
         .success(function(data) {
           console.log("success : ", data);
+          // change window location!
         })
         .error(function(data) {
             console.log('Error: ' + data);
@@ -222,6 +224,17 @@ angular.module('portfolioApp', ["ngRoute", 'ngCookies'])
         templateUrl: "../directives/header.html",
         controller: ['$scope', '$filter', function ($scope, $filter) {
           // $("#myImage").load(fn);
+        }]
+    }
+  })
+  .directive('who', function () {
+    return {
+        restrict: 'A', //This menas that it will be used as an attribute and NOT as an element. I don't like creating custom HTML elements
+        replace: true,
+        scope: true,
+        templateUrl: "../directives/who.html",
+        controller: ["$http", '$cookies', '$scope', function ($scope, $cookies, $http) {
+          location.replace("/");
         }]
     }
   })

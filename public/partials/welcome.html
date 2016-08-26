@@ -1,24 +1,24 @@
-<div header name="name"></div>
-<!-- <div class="row home-top">
-  <div class="col-md-offset-4 col-md-4 text-center">
-    <img src="images/ng_lg.png" class="center-block img-padding" width="40%"/>
+<div ng-if="!name">
+  <div who test="testers"></div>
+</div>
+<div ng-if="name">
+  <div header name="name"></div>
+  <div class="col-md-8 col-md-offset-1 welcome-table">
+    <table class="table table-sm">
+      <tbody>
+        <tr ng-repeat="val in allTitles track by val.id">
+          <td>
+            <a ng-href="{{val.link}}">
+              <h3 class="{{val.textcolor}} no-deco text-right">{{val.title}}</h3>
+            </a>
+          </td>
+          <td class="col-xs-7 {{val.color}} ">
+            <a ng-href="{{val.link}}" class="white-text no-deco text-left">
+              So {{name}}, you want to {{val.text}}
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-</div> -->
-<div class="col-md-8 col-md-offset-1 welcome-table">
-  <table class="table table-sm">
-    <tbody>
-      <tr ng-repeat="val in allTitles track by val.id">
-        <td>
-          <a ng-href="{{val.link}}">
-            <h3 class="{{val.textcolor}} no-deco text-right">{{val.title}}</h3>
-          </a>
-        </td>
-        <td class="col-xs-7 {{val.color}} ">
-          <a ng-href="{{val.link}}" class="white-text no-deco text-left">
-            So {{name}}, you want to {{val.text}}
-          </a>
-        </td>
-      </tr>
-    </tbody>
-  </table>
 </div>

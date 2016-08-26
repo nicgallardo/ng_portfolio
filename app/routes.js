@@ -47,8 +47,13 @@ module.exports = function (app) {
         Visitors.create({
             name: req.body.name,
         }, function (error, response) {
-            if (error)res.send(error);
-            getVisitors(response);
+            if (error){
+              console.log("err : ", error)
+              res.send(error);
+            }else if (response) {
+              console.log("res : ", response)
+              // getVisitors(response);
+            }
         });
     });
 
