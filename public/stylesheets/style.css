@@ -293,6 +293,8 @@ a:active {
   animation: type2 5s steps(60, end);
 }
 
+
+
 .interactive:nth-child(3){
   animation: type2 9s steps(60, end);
 }
