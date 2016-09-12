@@ -58,7 +58,6 @@ module.exports = function (app) {
     });
 
     app.post('/api/contacts', function (req, res) {
-      console.log("posted : ", req);
         Contacts.create({
             firstName: req.body.firstName,
             lastName: req.body.lastName,
@@ -66,7 +65,8 @@ module.exports = function (app) {
             phone: req.body.phone,
             message: req.body.message,
         }, function (error, response) {
-            if (error)res.send(error);
+            if (error) res.send(error);
+            if (response) res.send(200);
         });
     });
 

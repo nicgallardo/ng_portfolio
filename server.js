@@ -6,11 +6,17 @@ var database = require('./config/database'); 			// load the database config
 var morgan = require('morgan');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
-// var favicon = require('serve-favicon');
-require('dotenv').config();
-mongoose.connect(process.env.MONGODB_URI); 	// Connect to local MongoDB instance. A remoteUrl is also available (modulus.io)
+var favicon = require('serve-favicon');
+var Instagram = require('instagram-node-lib');
 
-// app.use(favicon(__dirname + '/public/favicon.ico')); //
+require('dotenv').config();
+
+process.env.NODE_ENV === 'dev' ? mongoose.connect(database.localUrl) : mongoose.connect(process.env.MONGODB_URI);
+
+Instagram.set('client_id', 'INSTA_CLIENT_ID');
+Instagram.set('client_secret', 'INSTA_CLIENT_SECRET');
+
+app.use(favicon(__dirname + '/public/favicon.ico')); //
 app.use(express.static('./public')); 		// set the static files location /public/img will be /img for users
 app.use(morgan('dev')); // log every request to the console
 app.use(bodyParser.urlencoded({'extended': 'true'})); // parse application/x-www-form-urlencoded

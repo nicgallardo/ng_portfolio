@@ -8,23 +8,35 @@
         <span class="icon-bar"></span>
       </button>
     </div>
-    <div class="row white-bg collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <div ng-repeat="item in collection track by item.id">
-        <div class="col-xs-2 height-200">
-          <div class="vert-center col-md-12">
-            <span class="vert-center text-center">
-              <h3>
-                <a ng-href="{{item.link}}" class="{{item.textcolor}} title-font" id="header-link">{{item.title}}</a>
-              </h3>
-            </span>
+   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav"  ng-repeat="item in collection track by item.id">
+        <li>
+          <a ng-href="{{item.link}}" class="{{item.textcolor}} title-font" id="header-link">{{item.title}}
+        </li>
+      </ul>
+      <div class="height-100 navbar-brand">
+        <a ng-href="welcome">
+          <img src="images/ng_logo_sm.png" height="75px"class="center-block img-padding title-font" id="header-link"/>
+        </a>
+      </div>
+    </div>
+    <!-- <div class="row white-bg collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <div ng-repeat="item in collection track by item.id">
+          <div class="col-xs-2 height-200">
+            <div class="vert-center col-md-12">
+              <span class="vert-center text-center">
+                  <h3>
+                    <a ng-href="{{item.link}}" class="{{item.textcolor}} title-font" id="header-link">{{item.title}}</a>
+                  </h3>
+              </span>
+            </div>
           </div>
         </div>
-      </div>
       <div class="col-xs-2 height-200 navbar-brand">
         <a ng-href="welcome">
           <img src="images/ng_logo_sm.png" class="center-block img-padding"/>
         </a>
       </div>
-    </div>
+    </div> -->
   </div>
 </nav>

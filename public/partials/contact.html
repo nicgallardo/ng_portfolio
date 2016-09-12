@@ -4,29 +4,36 @@
 <div ng-if="name">
   <div header name="name"></div>
   <div class="col-md-offset-2 padding-30 text-center col-md-8 white-bg twitter-border">
-    <h3 class="pink-one-text">
-      {{name ? 'Well looky there ' : ''}}{{name ? name : ''}}{{name ? ' you want to contact me?' : ''}}
-    </h3>
-    <form novalidate>
-      <div class="row">
-        <input type="text" ng-model="contact.firstName" class="custom-input-form" placeholder="first"/>
-        <input type="text" ng-model="contact.lastName" class="custom-input-form" placeholder="last"/>
-      </div>
-      <div class="row">
-        <input type="text" ng-model="contact.email" class="custom-input-form" aria-describedby="email" placeholder="email"/>
-        <input type="text" ng-model="contact.phone" class="custom-input-form" aria-describedby="phone" placeholder="phone"/>
-      </div>
-      <div class="row">
-        <textarea rows="6" ng-model="contact.message" class="custom-text-area">
-        </textarea>
-      </div>
-        <!-- <div class="input-group form-margin">
+    <div class="contact-form">
+      <h3 class="pink-one-text">
+        {{name ? 'Well looky there ' : ''}}{{name ? name : ''}}{{name ? ' you want to contact me?' : ''}}
+      </h3>
+      <form novalidate>
+        <div class="row">
+          <input type="text" ng-model="contact.firstName" class="custom-input-form" placeholder="first"/>
+          <input type="text" ng-model="contact.lastName" class="custom-input-form" placeholder="last"/>
         </div>
-        <div class="input-group form-margin">
-          <span class="input-group-addon" id="message">message</span>
-          <input type="text" ng-model="contact.message" class="form-control" aria-describedby="message"/>
-        </div> -->
-      <input type="submit" ng-click="update(contact)" value="submit" class="custom-submit"/>
-    </form>
+        <div class="row">
+          <input type="text" ng-model="contact.email" class="custom-input-form" aria-describedby="email" placeholder="email"/>
+          <input type="text" ng-model="contact.phone" class="custom-input-form" aria-describedby="phone" placeholder="phone"/>
+        </div>
+        <div class="row">
+          <textarea rows="6" ng-model="contact.message" class="custom-text-area">
+          </textarea>
+        </div>
+          <!-- <div class="input-group form-margin">
+          </div>
+          <div class="input-group form-margin">
+            <span class="input-group-addon" id="message">message</span>
+            <input type="text" ng-model="contact.message" class="form-control" aria-describedby="message"/>
+          </div> -->
+        <input type="submit" ng-click="update(contact)" value="submit" class="custom-submit"/>
+      </form>
+    </div>
+    <div ng-if="complete">
+      <h3 class="pink-one-text">
+        Thanks! I will be in contact with you soon {{name}}!
+      </h3>
+    </div>
   </div>
 </div>

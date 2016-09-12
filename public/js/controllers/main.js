@@ -91,20 +91,23 @@ angular.module('portfolioApp', ["ngRoute", 'ngCookies'])
   })
 
   .controller("contactCtrl", function($scope, $location, $cookies, $http, titles){
+    $scope.complete = false;
     $scope.path = $location.path();
     $scope.name = $cookies.get('visitorName') || false;
     $scope.collection = omitTitles(titles, 'contact');
     $scope.master = {};
     $scope.update = function(contact){
       $scope.master = angular.copy(contact);
-      $http.post('/api/contacts', $scope.master)
-        .success(function(data) {
-          console.log("success : ", data);
-          // change window location!
-        })
-        .error(function(data) {
-            console.log('Error: ' + data);
-        });
+      $http({
+        method: 'POST',
+        url: '/api/contacts',
+        data: $scope.master
+      }).then(function successCallback(data) {
+        $('.contact-form').empty();
+        $scope.complete = true;
+      }, function errorCallback(err) {
+        console.log('err')
+      });
     };
 
   })
