@@ -7,14 +7,14 @@ var morgan = require('morgan');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var favicon = require('serve-favicon');
-var Instagram = require('instagram-node-lib');
+// var Instagram = require('instagram-node-lib');
 
 require('dotenv').config();
 
 process.env.NODE_ENV === 'dev' ? mongoose.connect(database.localUrl) : mongoose.connect(process.env.MONGODB_URI);
 
-Instagram.set('client_id', 'INSTA_CLIENT_ID');
-Instagram.set('client_secret', 'INSTA_CLIENT_SECRET');
+// Instagram.set('client_id', 'INSTA_CLIENT_ID');
+// Instagram.set('client_secret', 'INSTA_CLIENT_SECRET');
 
 app.use(favicon(__dirname + '/public/favicon.ico')); //
 app.use(express.static('./public')); 		// set the static files location /public/img will be /img for users
